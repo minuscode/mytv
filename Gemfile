@@ -36,7 +36,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "unicorn", ">= 4.3.1", :group => :production
+gem "thin", :group => :production
 gem "mongoid", ">= 3.0.15"
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
