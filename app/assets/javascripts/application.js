@@ -21,6 +21,14 @@ $(function () {
           return $.get('/movies/autocomplete', { search: query }, function (data) {
               return process(data.options);
           });
+      },
+      updater: function (item) {
+          document.location = "?search=" + encodeURIComponent(item);
+          return item;
+      },
+      sorter: function (items) {
+          items.unshift(this.query);
+          return items;
       }
   });
 });
