@@ -38,6 +38,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+# The gem to crawl info from imdb
+gem 'imdb'
+
+
 gem "thin", :group => :production
 gem "mongoid", ">= 3.0.15"
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]

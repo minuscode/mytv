@@ -85,8 +85,11 @@ GEM
       json (>= 1.4.6)
     hashie (1.2.0)
     hike (1.2.1)
+    hpricot (0.8.6)
     hub (1.10.4)
     i18n (0.6.1)
+    imdb (0.6.8)
+      hpricot (~> 0.8.4)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -215,6 +218,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.1.0)
   figaro (>= 0.5.0)
   hub (>= 1.10.2)
+  imdb
   jquery-rails
   launchy (>= 2.1.2)
   mongoid (>= 3.0.15)
