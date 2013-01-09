@@ -60,3 +60,7 @@ gem "figaro", ">= 0.5.0"
 gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+# Our fuzzy string search gem
+gem 'mongoid_search'
+
