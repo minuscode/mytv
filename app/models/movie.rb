@@ -11,7 +11,7 @@ class Movie
   field :plot, type: String
   field :rating, type: Float
   field :year, type: Integer
-  field :director, type: String
+  field :director, type: Array
 
   search_in :title, :director
 
