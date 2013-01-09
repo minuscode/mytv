@@ -1,4 +1,6 @@
 Mytv::Application.routes.draw do
+  root :to => "home#index"
+
   resources :movies
 
   # The priority is based upon order of creation:
