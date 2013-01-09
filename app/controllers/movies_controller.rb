@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
 
     @movies_json = Hash.new
     @movies_json["options"] = []
-    @movies.each { |movie| @movies_json["options"] << "#{movie.title} #{movie.director.present? ? movie.director : ''}" } 
+    @movies.each { |movie| @movies_json["options"] << "#{movie.title} - #{movie.director.present? ? movie.director.join(", ") : ''}" } 
     
     render json: @movies_json.to_json
   end

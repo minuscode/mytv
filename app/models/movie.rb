@@ -17,7 +17,7 @@ class Movie
 
   def self.search(search)
     if search.present?
-      Movie.full_text_search(search)
+      Movie.full_text_search(search, allow_empty_search: true)
     else
       Movie.all
     end
