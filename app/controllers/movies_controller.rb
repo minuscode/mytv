@@ -10,6 +10,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def autocomplete
+    @movies = Movie.search(params[:search])
+
+    @movies_json = Hash.new
+    @movies_json["options"] = []
+    @movies.each { |movie| @movies_json["options"] << "#{movie.title} #{movie.director.present? ? movie.director : ''}" } 
+    
+    render json: @movies_json.to_json
+  end
+
   # GET /movies/1
   # GET /movies/1.json
   def show

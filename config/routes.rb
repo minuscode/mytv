@@ -1,7 +1,9 @@
 Mytv::Application.routes.draw do
   root :to => "home#index"
 
-  resources :movies
+  resources :movies do
+    get :autocomplete, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

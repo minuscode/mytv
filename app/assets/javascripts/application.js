@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function () {
+  $('.typeahead').typeahead({
+      source: function (query, process) {
+          return $.get('/movies/autocomplete', { search: query }, function (data) {
+              return process(data.options);
+          });
+      }
+  });
+});
