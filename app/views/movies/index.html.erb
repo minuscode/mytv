@@ -1,21 +1,32 @@
 <h1>Listing movies</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<table id="movies" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Poster</th>
+      <!--<th>#</th>-->
+      <th>Year</th>
+      <th>Title</th>
+      <th>Director/s</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @movies.each do |movie| %>
-  <tr>
-    <td><%= movie.title %></td>
-    <td><%= link_to 'Show', movie %></td>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <tr class="movie">
+      <td class="poster"><%= movie_photo movie.poster, :class => "img-polaroid" %></td>
+      <!--<td><%= movie.imdb_id %></td>-->
+      <td><%= movie.year %></td>
+      <td><%= link_to movie.title, movie %></td>
+      <td><%= movie.director.to_a.join(", ") %></td>
+      <td><%= link_to 'Show', movie %></td>
+      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+      <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />

@@ -5,7 +5,19 @@
   <%= @movie.title %>
 </p>
 
-<%= movie_photo @movie.poster %>
+<p>
+  <b>Year:</b>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <b>Director/s:</b>
+  <%= @movie.director.join(", ") %>
+</p>
+
+<p>
+<%= movie_photo @movie.poster, :style => "height:140px", :class => "img-polaroid" %>
+</p>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
